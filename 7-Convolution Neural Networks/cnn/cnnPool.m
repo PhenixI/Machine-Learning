@@ -28,12 +28,24 @@ pooledFeatures = zeros(convolvedDim / poolDim, ...
 %   corresponding (poolRow, poolCol) pooling region. 
 %   
 %   Use mean pooling here.
-filter = ones(poolDim,poolDim)./(poolDim*poolDim);
-for imageNum = 1:numImages,
-    for filterNum = 1:numFilters,
-        poolImage = conv2(convolvedFeatures(:,:,filterNum,imageNum),filter,'valid');
-        poolImage = poolImage(1:poolDim:end,1:poolDim:end);
-        pooledFeatures(:,:,filterNum,imageNum) = poolImage;%./(poolDim*poolDim);
+% filter = ones(poolDim,poolDim)./(poolDim*poolDim);
+% for imageNum = 1:numImages,
+%     for filterNum = 1:numFilters,
+%         poolImage = conv2(convolvedFeatures(:,:,filterNum,imageNum),filter,'valid');
+%         poolImage = poolImage(1:poolDim:end,1:poolDim:end);
+%         pooledFeatures(:,:,filterNum,imageNum) = poolImage;%./(poolDim*poolDim);
+%     end
+% end
+
+numBlocks = floor(convolvedDim/poolDim);
+for filterNum = 1:numFilters
+    for imageNum = 1:numImages
+        for poolRow = 1:numBlocks
+            for poolCol = 1:numBlocks
+                features = convolvedFeatures((poolRow-1)*poolDim+1:poolRow*poolDim,(poolCol-1)*poolDim+1:poolCol*poolDim,filterNum,imageNum);
+                pooledFeatures(poolRow,poolCol,filterNum,imageNum)=mean(features(:));
+            end
+        end
     end
 end
 
