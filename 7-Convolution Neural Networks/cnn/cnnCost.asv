@@ -132,8 +132,6 @@ index = sub2ind(size(logp),labels',1:size(probs,2));
 ceCost = -sum(logp(index));
 wCost = lambda/2 * (sum(Wd(:).^2)+sum(Wc(:).^2));
 cost = ceCost/numImages + wCost;
-
-
 % Makes predictions given probs and returns without backproagating errors.
 if pred
     [~,preds] = max(probs,[],1);
