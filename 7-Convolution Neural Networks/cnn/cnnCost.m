@@ -47,6 +47,8 @@ Wd_grad = zeros(size(Wd));
 bc_grad = zeros(size(bc));
 bd_grad = zeros(size(bd));
 
+lambda = 1;
+
 %%======================================================================
 %% STEP 1a: Forward Propagation
 %  In this step you will forward propagate the input through the
@@ -153,7 +155,21 @@ end;
 %  quickly.
 
 %%% YOUR CODE HERE %%%
-
+%1.softmax layer
+output = zeros(size(probs));
+output(index) = 1;
+DeltaSoftmax = probs - output;
+%2.pool layer
+DeltaPool = reshape(Wd'*DeltaSoftmax,outputDim,outputDim,numFilters,numImages);
+DeltaUnpool = zeros(convDim,convDim,numFilters,numImages);
+for imNum = 1:numImages
+    for FilterNum = 1:numFilters
+        unpool = DeltaPool(:,:,FilterNum,imNum);
+        DeltaUnpool(:,:,FilterNum,imNum) = kron(unpool,ones(poolDim,poolDim))./(poolDim^2);
+    end
+end
+%3.convolution layer
+DeltaConv = DeltaUnpool.* activations.*(1-activations);
 %%======================================================================
 %% STEP 1d: Gradient Calculation
 %  After backpropagating the errors above, we can use them to calculate the
@@ -163,6 +179,31 @@ end;
 %  for that filter with each image and aggregate over images.
 
 %%% YOUR CODE HERE %%%
+Wd_grad = (1./numImages).*DeltaSoftmax*activationsPooled'+lambda*Wd;
+bd_grad = (1./numImages).*sum(DeltaSoftmax,2);
+
+bc_grad = zeros(size(bc));
+Wc_grad = zeros(filterDim,filterDim,numFilters);
+
+for filterNum = 1:numFilters
+    error = DeltaConv(:,:,filterNum,:);
+    bc_grad(filterNum) = (1./numImages).*sum(error(:));
+end
+
+for filterNum = 1:numFilters
+    for imNum = 1:numImages
+        error = DeltaConv(:,:,filterNum,imNum);
+        DeltaConv(:,:,filterNum,imNum) = rot90(error,2);
+    end
+end
+
+for filterNum = 1:numFilters
+    for imNum = 1:numImages
+        Wc_grad(:,:,filterNum) = Wc_grad(:,:,filterNum)+conv2(images(:,:,imNum),DeltaConv(:,:,filterNum,imNum),'valid');
+    end
+end
+
+Wc_grad = (1./numImages).*Wc_grad + lambda*Wc;
 
 %% Unroll gradient into grad vector for minFunc
 grad = [Wc_grad(:) ; Wd_grad(:) ; bc_grad(:) ; bd_grad(:)];
