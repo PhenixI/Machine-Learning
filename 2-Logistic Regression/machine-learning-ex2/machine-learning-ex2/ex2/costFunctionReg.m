@@ -24,9 +24,10 @@ J = sum(pos + neg)./m;
 
 J = - J + (lambda/(2*m))*sum(theta(2:end).*theta(2:end));
 
-for i = 1 : m,
-    grad = grad + (h(i)-y(i))* X(i,:)' ;
-end
+% for i = 1 : m,
+%     grad = grad + (h(i)-y(i))* X(i,:)' ;
+% end
+grad = X'*(h'-y);
 grad(1) = grad(1)./m;
 grad(2:end) = (grad(2:end) + (lambda)*theta(2:end))./m;
 

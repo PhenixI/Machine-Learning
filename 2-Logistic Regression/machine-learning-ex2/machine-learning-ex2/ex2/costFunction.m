@@ -26,9 +26,10 @@ neg = (1 - y)'.*log(1 - h);
 J = sum(pos - neg)./m;
 
 
-for i = 1 : m,
-    grad = grad + (h(i)-y(i))* X(i,:)';
-end
+% for i = 1 : m,
+%     grad = grad + (h(i)-y(i))* X(i,:)';
+% end
+grad = X'*(h'-y);
 grad = grad./m;
 % =============================================================
 
