@@ -18,13 +18,15 @@ for iter = 1:num_iters
     %
     n = length(theta);
     sum = zeros(n,1);
-    for j = 1:n,
-        for i = 1:m,
-            sum(j) = sum(j)+(y(i) - theta'* (X(i,:))')*(X(i,j));
-        end;
-    end;
+%     for j = 1:n,
+%         for i = 1:m,
+%             sum(j) = sum(j)+(y(i) - theta'* (X(i,:))')*(X(i,j));
+%         end;
+%     end;
+    % vectorization version
+    sum = X'*(y-(X*theta));
+    
     theta = theta + (alpha/m)*sum;     
-
 
     % ============================================================
 
