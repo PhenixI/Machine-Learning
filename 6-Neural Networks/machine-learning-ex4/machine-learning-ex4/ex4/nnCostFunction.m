@@ -61,6 +61,8 @@ Theta2_grad = zeros(size(Theta2));
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
+
+%1 : Feedforward
 Xadd = [ones(m,1) X]';
 z2 = Theta1*Xadd;
 a2 = sigmoid(z2);
@@ -71,11 +73,13 @@ a3 = sigmoid(z3);
 pos = log(a3);
 neg = log(1-a3);
 
+%2 : Calculate loss cost 
 for i = 1:m,
     yi = zeros(num_labels,1);
     yi(y(i)) = 1;
     J = J + sum(-(yi.*pos(:,i))-((1-yi).*neg(:,i)));
 end
+%3 : add regularization cost
 sumTheta1 = 0 ;
 sumTheta2 = 0;
 Theta10 = Theta1 .* Theta1;
@@ -91,6 +95,7 @@ J = J + ((sumTheta1 + sumTheta2)*lambda)/(2);
 J = J/m;
 
 % -------------------------------------------------------------
+%4 : backpropagation
 Delta1 = 0;
 Delta2 = 0;
 for i = 1:m,
