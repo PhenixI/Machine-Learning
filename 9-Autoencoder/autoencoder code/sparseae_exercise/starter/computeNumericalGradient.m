@@ -17,13 +17,13 @@ numgrad = zeros(size(theta));
 % respect to theta(i).
 %                
 % Hint: You will probably want to compute the elements of numgrad one at a time. 
+epsilon = 1e-4;
 
-
-
-
-
-
-
-
+n = size(theta,1);
+E = eye(n);
+for i = 1:n
+    delta = E(:,i)*epsilon;
+    numgrad(i) = (J(theta+delta)-J(theta-delta))/(epsilon*2.0);
+end
 %% ---------------------------------------------------------------
 end

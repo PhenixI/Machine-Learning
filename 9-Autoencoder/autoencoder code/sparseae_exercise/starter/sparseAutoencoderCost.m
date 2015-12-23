@@ -45,13 +45,13 @@ m = size(data,2);
 
 % 1:Feedforward
 dataAdd = [ones(1,m); data];
-W1_b1 = [b1' W1];
+W1_b1 = [b1 W1];
 z2  = W1_b1*dataAdd;
 a2 = sigmoid(z2);
 a2Add = [ones(1,m);a2];
-W2_b2 = [b2' W2];
-z2 = W2_b2 * a2Add;
-a3 = sigmoid(z2);
+W2_b2 = [b2 W2];
+z3 = W2_b2 * a2Add;
+a3 = sigmoid(z3);
 
 pos = log(a3);
 neg = log(1-a3);
@@ -63,26 +63,20 @@ end
 %cost = sum(sum(-(data.*pos)-((1-data).*neg))) ;
 cost = cost /m;
 
-%3: backpropagation
+%3 : backpropagation
+Delta1 = 0;
+Delta2 = 0;
+delta_3 = a3 - data;
+a = (W2_b2)'*delta_3;
+delta_2 = a(2:end,:).*sigmoidGradient(z2);
 
+Delta2 = Delta2 + delta_3 * a2';
+Delta1 = Delta1 + delta_2 * data';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+W1grad = Delta1/m;
+b1grad = sum(delta_2,2)/m;
+W2grad = Delta2/m;
+b2grad = sum(delta_3,2)/m;
 
 
 %-------------------------------------------------------------------
@@ -102,5 +96,10 @@ end
 function sigm = sigmoid(x)
   
     sigm = 1 ./ (1 + exp(-x));
+end
+
+function g = sigmoidGradient(z)
+g = zeros(size(z));
+g = sigmoid(z).*(1-sigmoid(z));
 end
 
