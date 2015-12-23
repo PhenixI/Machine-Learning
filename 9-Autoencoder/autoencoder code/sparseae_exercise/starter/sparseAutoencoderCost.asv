@@ -61,10 +61,8 @@ for i = 1:m
     cost = cost + sum(-(data(:,i).*pos(:,i))-((1-data(:,i)).*neg(:,i))); 
 end
 %cost = sum(sum(-(data.*pos)-((1-data).*neg))) ;
-cost = cost /m;
 
-%3: backpropagation
-
+%3 
 
 
 
