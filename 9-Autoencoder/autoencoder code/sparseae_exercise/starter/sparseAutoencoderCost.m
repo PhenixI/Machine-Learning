@@ -41,42 +41,94 @@ b2grad = zeros(size(b2));
 % Stated differently, if we were using batch gradient descent to optimize the parameters,
 % the gradient descent update to W1 would be W1 := W1 - alpha * W1grad, and similarly for W2, b1, b2. 
 % 
-m = size(data,2);
 
-% 1:Feedforward
-dataAdd = [ones(1,m); data];
-W1_b1 = [b1 W1];
-z2  = W1_b1*dataAdd;
+Jcost = 0;
+Jweight = 0;
+Jsparse = 0;
+[n m] = size(data);
+
+z2 = W1*data + repmat(b1,1,m);
 a2 = sigmoid(z2);
-a2Add = [ones(1,m);a2];
-W2_b2 = [b2 W2];
-z3 = W2_b2 * a2Add;
+z3 = W2*a2 + repmat(b2,1,m);
 a3 = sigmoid(z3);
 
-pos = log(a3);
-neg = log(1-a3);
+Jcost = (0.5/m)*sum(sum((a3-data).^2));
+Jweight = (1/2)*(sum(sum(W1.^2))+sum(sum(W2.^2)));
 
-%2 : Calculate loss cost
-for i = 1:m
-    cost = cost + sum(-(data(:,i).*pos(:,i))-((1-data(:,i)).*neg(:,i))); 
-end
-%cost = sum(sum(-(data.*pos)-((1-data).*neg))) ;
-cost = cost /m;
+rho = (1/m).*sum(a2,2);
+Jsparse = sum(sparsityParam.*log(sparsityParam./rho)+(1-sparsityParam).*log((1-sparsityParam)./(1-rho)));
 
-%3 : backpropagation
-Delta1 = 0;
-Delta2 = 0;
-delta_3 = a3 - data;
-a = (W2_b2)'*delta_3;
-delta_2 = a(2:end,:).*sigmoidGradient(z2);
+cost = Jcost + lambda*Jweight+beta*Jsparse;
 
-Delta2 = Delta2 + delta_3 * a2';
-Delta1 = Delta1 + delta_2 * data';
+d3 = -(data-a3).*sigmoidGradient(z3);
+sterm = beta*(-sparsityParam./rho+(1-sparsityParam)./(1-rho));
+d2 = (W2'*d3 + repmat(sterm,1,m)).*sigmoidGradient(z2);
 
-W1grad = Delta1/m;
-b1grad = sum(delta_2,2)/m;
-W2grad = Delta2/m;
-b2grad = sum(delta_3,2)/m;
+W1grad = W1grad + d2*data';
+W1grad = (1/m)*W1grad + lambda * W1;
+
+W2grad = W2grad + d3*a2';
+W2grad = (1/m).*W2grad + lambda*W2;
+
+b1grad = b1grad + sum(d2,2);
+b1grad = (1/m)*b1grad;
+
+b2grad = b2grad + sum(d3,2);
+b2grad = (1/m)*b2grad;
+
+
+% m = size(data,2);
+% 
+% % 1:Feedforward
+% dataAdd = [ones(1,m); data];
+% W1_b1 = [b1 W1];
+% z2  = W1_b1*dataAdd;
+% a2 = sigmoid(z2);
+% a2Add = [ones(1,m);a2];
+% W2_b2 = [b2 W2];
+% z3 = W2_b2 * a2Add;
+% a3 = sigmoid(z3);
+% 
+% pos = log(a3);
+% neg = log(1-a3);
+% 
+% %2 : Calculate loss cost
+% for i = 1:m
+%     cost = cost + sum(-(data(:,i).*pos(:,i))-((1-data(:,i)).*neg(:,i))); 
+% end
+% %cost = sum(sum(-(data.*pos)-((1-data).*neg))) ;
+% sumTheta1 = sum(sum(W1.*W1));
+% sumTheta2 = sum(sum(W2.*W2));
+% 
+% % regularization penalty
+% cost = cost + lambda*(sumTheta1+sumTheta2)/2;
+% cost = cost /m;
+% 
+% % sparsity penalty
+% roJ = (1./m)*sum(a2,2);
+% sCost = sum(sparsityParam.*log(sparsityParam./roJ)+(1-sparsityParam).*log((1-sparsityParam)./(1-roJ)));
+% 
+% cost = cost + beta*sCost;
+% 
+% 
+% %3 : backpropagation
+% Delta1 = 0;
+% Delta2 = 0;
+% delta_3 = a3 - data;
+% a = (W2_b2)'*delta_3;
+% sterm = beta * (-sparsityParam./roJ + (1-sparsityParam)./(1-roJ));
+% delta_2 = (a(2:end,:)+repmat(sterm,1,m)).*sigmoidGradient(z2);
+% 
+% Delta2 = Delta2 + delta_3 * a2';
+% Delta1 = Delta1 + delta_2 * data';
+% 
+% W1grad = Delta1/m;
+% W1grad = W1grad + W1*lambda/m;
+% b1grad = sum(delta_2,2)/m;
+% 
+% W2grad = Delta2/m;
+% W2grad = W2grad + W2*lambda/m;
+% b2grad = sum(delta_3,2)/m;
 
 
 %-------------------------------------------------------------------
@@ -99,7 +151,6 @@ function sigm = sigmoid(x)
 end
 
 function g = sigmoidGradient(z)
-g = zeros(size(z));
 g = sigmoid(z).*(1-sigmoid(z));
 end
 
