@@ -15,3 +15,7 @@ sigma = x*x' /size(x,2);
 [U,S,V] = svd(sigma);
 xRot = U'*x;
 
+xPCAwhite = diag(1./sqrt(diag(S)+epsilon))*xRot;
+Z = U * xPCAwhite;
+
+
