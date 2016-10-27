@@ -1,4 +1,4 @@
-import numpy as np
+﻿import numpy as np
 class Perceptron(object):
     """Perceptron classifier.
     Parameters
@@ -18,7 +18,7 @@ class Perceptron(object):
         self.eta = eta
         self.n_iter = n_iter
 
-    def fit(self,X,y)：
+    def fit(self,X,y):
         """Fit training data.
         Parameters
         ----------
