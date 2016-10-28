@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AdalineGD.py" />
+    <Compile Include="AdalineSGD.py" />
     <Compile Include="DecisionBoundary.py" />
     <Compile Include="Perceptron.py" />
     <Compile Include="train.py" />
