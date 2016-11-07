@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8ff4abde-41c8-443e-9ef8-9b0a20a40285</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>kernel_PCA_python.py</StartupFile>
+    <StartupFile>rbf_kPCA.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="kernel_PCA_python.py" />
+    <Compile Include="kPCA_scikit_learning.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="kPCA_test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="rbf_kPCA.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

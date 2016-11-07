@@ -3,15 +3,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>1ee67140-f8a1-4ce8-abc2-0f624650d9e6</ProjectGuid>
+    <ProjectGuid>ac7daa59-7602-46d1-a21b-30f3d1bebe1f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LDA_python.py</StartupFile>
+    <StartupFile>debugging_algorithms.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>LDA_python</Name>
-    <RootNamespace>LDA_python</RootNamespace>
+    <Name>model_evaluation</Name>
+    <RootNamespace>model_evaluation</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,12 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DecisionBoundary.py" />
-    <Compile Include="LDA.py" />
-    <Compile Include="LDA_python.py" />
-    <Compile Include="LDA_scikit_learn.py">
+    <Compile Include="cross_validation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="debugging_algorithms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="model_pipeline.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
