@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="learn_bigger_data.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="sentiment_analysis_movie.py" />
   </ItemGroup>
   <PropertyGroup>
