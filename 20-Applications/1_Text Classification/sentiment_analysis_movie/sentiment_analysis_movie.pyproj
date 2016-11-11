@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>703f1dbc-93d5-4eb2-ad06-cad3c1ad2639</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>sentiment_analysis_movie.py</StartupFile>
+    <StartupFile>learn_bigger_data.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

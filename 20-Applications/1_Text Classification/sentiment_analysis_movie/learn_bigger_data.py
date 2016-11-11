@@ -1,4 +1,4 @@
-#define a tokenizer function that cleans the unprocessed text data from
+ï»¿#define a tokenizer function that cleans the unprocessed text data from
 #movie_data.csv file that we constructed in the beginning of this chapter
 #and separates it into word tokens while removing stop words
 
@@ -13,7 +13,7 @@ def tokenizer(text):
     tokenized = [w for w in text.split() if w not in stop]
     return tokenized
 
-#define a generator function,stream_docs£¬that reads in and returns one document at a time
+#define a generator function,stream_docsï¿½ï¿½that reads in and returns one document at a time
 def stream_docs(path):
     with open(path,'r') as csv:
         next(csv) #skip header
@@ -66,4 +66,15 @@ for _ in range(45):
 X_test,y_test = get_minibatch(doc_stream,size=5000)
 X_test = vect.transform(X_test)
 print('Accuracy: %.3f' % clf.score(X_test,y_test))
+
+#serializing estimators using pickle module
+import pickle
+import os
+os.chdir('E:\\machine-learning\\20-Applications\\1_Text Classification\sentiment_analysis_movie')
+dest = os.path.join('movieclassifier','pkl_objects')
+if not os.path.exists(dest):
+    os.makedirs(dest)
+#serializ the trained logistic regression model as well as the stop word set from the NLTK library
+pickle.dump(stop,open(os.path.join(dest,'stopwords.pkl'),'wb'),protocol = 4)
+pickle.dump(clf,open(os.path.join(dest,'classifier.pkl'),'wb'),protocol=4)
 
