@@ -7,7 +7,7 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "linear_regression", "..\2_s
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ransacregression", "..\2_supervised_regression\1-Linear Regression\ransacregression\ransacregression.pyproj", "{66F1A835-195C-4A2C-AEFB-CD4CD1CDC255}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "k-means_python", "..\3_unsupervised_classification(clustering)\11-K-means\k-means_python\k-means_python.pyproj", "{552CFC45-E70C-4853-A72E-54694F0507E9}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ANN_python", "..\1_supervised_classification\6-Perceptron and Neural Networks\ANN_python\ANN_python.pyproj", "{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +19,8 @@ Global
 		{A138D92B-E348-4FFD-8B16-4E61A285E031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66F1A835-195C-4A2C-AEFB-CD4CD1CDC255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66F1A835-195C-4A2C-AEFB-CD4CD1CDC255}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{552CFC45-E70C-4853-A72E-54694F0507E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{552CFC45-E70C-4853-A72E-54694F0507E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
