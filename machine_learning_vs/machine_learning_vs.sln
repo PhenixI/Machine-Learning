@@ -3,11 +3,51 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "data_preprocessing", "..\0-Data Preprocessing\data_preprocessing\data_preprocessing.pyproj", "{5B2E15B9-AAF1-4733-9527-A0AC0C0738C5}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "logistic_regression", "..\1_supervised_classification\2-Logistic Regression\logistic_regression\logistic_regression.pyproj", "{FF2F5EA6-98CF-4397-8A72-FDCB55F8BA89}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "model_evaluation", "..\1_supervised_classification\5-Model Evalution and Hyperparameter Tuning\model evaluation\model_evaluation\model_evaluation.pyproj", "{AC7DAA59-7602-46D1-A21B-30F3D1BEBE1F}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ANN_python", "..\1_supervised_classification\6-Perceptron and Neural Networks\ANN_python\ANN_python.pyproj", "{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "perceptron", "..\1_supervised_classification\6-Perceptron and Neural Networks\perceptron\perceptron.pyproj", "{3CB75BC2-8F28-46B0-8771-43CF44A8DEB2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Perceptron_python", "..\1_supervised_classification\6-Perceptron and Neural Networks\Perceptron_python\Perceptron_python.pyproj", "{510A6DB3-165F-413F-802D-1A0D10CA7760}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "svm", "..\1_supervised_classification\15-SVM\svm\svm.pyproj", "{AFB67DA0-449C-4DA8-8CB4-6B19D59DF12B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "decision_tree_learning", "..\1_supervised_classification\16-Decision_Tree_Learning\decision_tree_learning\decision_tree_learning.pyproj", "{A9A61F34-A007-4D13-8F9F-7341F087B7BC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "random_forest", "..\1_supervised_classification\17-Random_Forest\random_forest\random_forest.pyproj", "{46C0540F-9642-4180-B517-3CDDC9BE39DD}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "kNN", "..\1_supervised_classification\18-KNN\kNN\kNN.pyproj", "{680B86BC-311C-4E55-8985-66FFD891F96A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "AdaBoost", "..\1_supervised_classification\19-Ensemble Learning\AdaBoost\AdaBoost.pyproj", "{0FBEAC43-0BB6-410E-AD8D-AD1E231A7D41}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "baggining", "..\1_supervised_classification\19-Ensemble Learning\baggining\baggining.pyproj", "{43E942FF-87DC-41C6-85DF-BDBF17F07300}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "majority_voting", "..\1_supervised_classification\19-Ensemble Learning\majority_voting\majority_voting.pyproj", "{7BBE0EFF-BCD9-42A0-B8E1-8C337D2DE031}"
+EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "linear_regression", "..\2_supervised_regression\1-Linear Regression\linear_regression\linear_regression.pyproj", "{A138D92B-E348-4FFD-8B16-4E61A285E031}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ransacregression", "..\2_supervised_regression\1-Linear Regression\ransacregression\ransacregression.pyproj", "{66F1A835-195C-4A2C-AEFB-CD4CD1CDC255}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ANN_python", "..\1_supervised_classification\6-Perceptron and Neural Networks\ANN_python\ANN_python.pyproj", "{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "hierarchical_clustering", "..\3_unsupervised_clustering\2_hierarchical tree\hierarchical_clustering\hierarchical_clustering.pyproj", "{B5D74712-DE74-4FED-B2C0-9EEFA7D34083}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DBSCAN", "..\3_unsupervised_clustering\3_DBSCAN\DBSCAN\DBSCAN.pyproj", "{F4C30A88-D62F-4929-AB8B-2309CE1741A6}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "k-means_python", "..\3_unsupervised_clustering\11-K-means\k-means_python\k-means_python.pyproj", "{552CFC45-E70C-4853-A72E-54694F0507E9}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "kernel_PCA_python", "..\10-Compressing_Data\kernel_PCA\kernel_PCA_python\kernel_PCA_python.pyproj", "{8FF4ABDE-41C8-443E-9EF8-9B0A20A40285}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "LDA_python", "..\10-Compressing_Data\LDA\LDA_python\LDA_python.pyproj", "{1EE67140-F8A1-4CE8-ABC2-0F624650D9E6}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pca_python", "..\10-Compressing_Data\PCA\pca_python\pca_python.pyproj", "{272D5075-3E29-4BAA-ADE2-ED47A757622B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "sentiment_analysis_movie", "..\20-Applications\1_Text Classification\sentiment_analysis_movie\sentiment_analysis_movie.pyproj", "{703F1DBC-93D5-4EB2-AD06-CAD3C1AD2639}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ml_web", "..\20-Applications\2_Embeding a Machine Learning Model into a Web Application\ml_web\ml_web.pyproj", "{2AA481B6-40F4-485E-BF4C-AB3CB129D672}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +55,52 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B2E15B9-AAF1-4733-9527-A0AC0C0738C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2E15B9-AAF1-4733-9527-A0AC0C0738C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2F5EA6-98CF-4397-8A72-FDCB55F8BA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2F5EA6-98CF-4397-8A72-FDCB55F8BA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7DAA59-7602-46D1-A21B-30F3D1BEBE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7DAA59-7602-46D1-A21B-30F3D1BEBE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB75BC2-8F28-46B0-8771-43CF44A8DEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB75BC2-8F28-46B0-8771-43CF44A8DEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{510A6DB3-165F-413F-802D-1A0D10CA7760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{510A6DB3-165F-413F-802D-1A0D10CA7760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB67DA0-449C-4DA8-8CB4-6B19D59DF12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB67DA0-449C-4DA8-8CB4-6B19D59DF12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A61F34-A007-4D13-8F9F-7341F087B7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A61F34-A007-4D13-8F9F-7341F087B7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C0540F-9642-4180-B517-3CDDC9BE39DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C0540F-9642-4180-B517-3CDDC9BE39DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680B86BC-311C-4E55-8985-66FFD891F96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680B86BC-311C-4E55-8985-66FFD891F96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBEAC43-0BB6-410E-AD8D-AD1E231A7D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBEAC43-0BB6-410E-AD8D-AD1E231A7D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E942FF-87DC-41C6-85DF-BDBF17F07300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E942FF-87DC-41C6-85DF-BDBF17F07300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBE0EFF-BCD9-42A0-B8E1-8C337D2DE031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBE0EFF-BCD9-42A0-B8E1-8C337D2DE031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A138D92B-E348-4FFD-8B16-4E61A285E031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A138D92B-E348-4FFD-8B16-4E61A285E031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66F1A835-195C-4A2C-AEFB-CD4CD1CDC255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66F1A835-195C-4A2C-AEFB-CD4CD1CDC255}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB464D5B-2EAB-49EE-B284-E5CA3F0E5046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D74712-DE74-4FED-B2C0-9EEFA7D34083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D74712-DE74-4FED-B2C0-9EEFA7D34083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C30A88-D62F-4929-AB8B-2309CE1741A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C30A88-D62F-4929-AB8B-2309CE1741A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552CFC45-E70C-4853-A72E-54694F0507E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552CFC45-E70C-4853-A72E-54694F0507E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF4ABDE-41C8-443E-9EF8-9B0A20A40285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF4ABDE-41C8-443E-9EF8-9B0A20A40285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE67140-F8A1-4CE8-ABC2-0F624650D9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE67140-F8A1-4CE8-ABC2-0F624650D9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{272D5075-3E29-4BAA-ADE2-ED47A757622B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272D5075-3E29-4BAA-ADE2-ED47A757622B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703F1DBC-93D5-4EB2-AD06-CAD3C1AD2639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703F1DBC-93D5-4EB2-AD06-CAD3C1AD2639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AA481B6-40F4-485E-BF4C-AB3CB129D672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AA481B6-40F4-485E-BF4C-AB3CB129D672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

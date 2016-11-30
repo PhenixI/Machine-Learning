@@ -3,15 +3,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>0fbeac43-0bb6-410e-ad8d-ad1e231a7d41</ProjectGuid>
+    <ProjectGuid>a9a61f34-a007-4d13-8f9f-7341f087b7bc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>AdaBoost.py</StartupFile>
+    <StartupFile>decision_tree_learning.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>AdaBoost</Name>
-    <RootNamespace>AdaBoost</RootNamespace>
+    <Name>decision_tree_learning</Name>
+    <RootNamespace>decision_tree_learning</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,8 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AdaBoost.py" />
-    <Compile Include="adaBoost_scikit.py" />
+    <Compile Include="decision_tree_learning.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,11 +1,11 @@
-#Classifying handwritten digits
+ï»¿#Classifying handwritten digits
 
 #1.obtaining the mnist dataset
 import os
 import struct
 import numpy as np
 
-#1.the frst being an n m ¡Á dimensional
+#1.the frst being an n m ï¿½ï¿½ dimensional
 #NumPy array (images), where n is the number of samples and m is the number
 #of features
 

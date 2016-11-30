@@ -3,15 +3,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>0fbeac43-0bb6-410e-ad8d-ad1e231a7d41</ProjectGuid>
+    <ProjectGuid>46c0540f-9642-4180-b517-3cddc9be39dd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>AdaBoost.py</StartupFile>
+    <StartupFile>random_forest.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>AdaBoost</Name>
-    <RootNamespace>AdaBoost</RootNamespace>
+    <Name>random_forest</Name>
+    <RootNamespace>random_forest</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,8 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AdaBoost.py" />
-    <Compile Include="adaBoost_scikit.py" />
+    <Compile Include="random_forest.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

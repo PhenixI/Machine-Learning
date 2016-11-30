@@ -1,4 +1,4 @@
-#implement the code of an MLP with one input, one hidden, and one output layer to classify the images in the MNIST dataset
+ï»¿#implement the code of an MLP with one input, one hidden, and one output layer to classify the images in the MNIST dataset
 import numpy as np
 from scipy.special import expit
 import sys
@@ -8,7 +8,7 @@ class NeuralNetMLP(object):
     #parameter:
     #l2: the lamda parameter for L2 regularization to decrease the degree of overfitting
     #l1: the lamda parameter for L1 regularization
-    #epochs£º The Number of passes over the training set.
+    #epochsï¿½ï¿½ The Number of passes over the training set.
     #eta: the learning rate eta
     #     a parameter for momentum learning to add a factor of the previous gradient to the weight
     #     update for faster learning deltaW(cur) = eta*deltaJ(Wcur) + alpha * Wpre
